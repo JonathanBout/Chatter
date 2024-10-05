@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Chatter.TerminalClient": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}

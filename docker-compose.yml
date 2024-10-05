@@ -1,0 +1,42 @@
+volumes:
+  db-data:
+  pgadmin-data:
+
+services:
+  chatter.server:
+    image: ${DOCKER_REGISTRY-}chatterserver
+    build:
+      context: .
+      dockerfile: Chatter.Server/Dockerfile
+    depends_on:
+      - db
+    environment:
+    - ASPNETCORE_ENVIRONMENT=Development
+    - ASPNETCORE_HTTP_PORTS=8080
+    - ASPNETCORE_HTTPS_PORTS=8081
+    - ConnectionStrings__postgres=Host=db;Database=chatter;Username=chatter;Password=45rfvdkr3r9rfh94f9ffbh4
+    volumes:
+    - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+    - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+    ports:
+    - "8080"
+    - "8081"
+  db:
+    image: postgres
+    environment:
+    - POSTGRES_USER=chatter
+    - POSTGRES_PASSWORD=45rfvdkr3r9rfh94f9ffbh4
+    - POSTGRES_DB=chatter
+    volumes:
+    - db-data:/var/lib/postgresql/data
+  db.dashboard:
+    image: dpage/pgadmin4
+    environment:
+    - PGADMIN_DEFAULT_EMAIL=admin@jonathanbout.dev
+    - PGADMIN_DEFAULT_PASSWORD=admin
+    depends_on:
+    - db
+    ports:
+    - "8181:80"
+    volumes:
+    - pgadmin-data:/var/lib/pgadmin

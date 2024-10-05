@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "Docker Compose": {
+      "commandName": "DockerCompose",
+      "commandVersion": "1.0",
+      "composeLaunchAction": "LaunchBrowser",
+      "composeLaunchServiceName": "chatter.server",
+      "composeLaunchUrl": "http://localhost:8181",
+      "serviceActions": {
+        "chatter.server": "StartDebugging"
+      }
+    }
+  }
+}
