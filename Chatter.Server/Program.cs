@@ -48,9 +48,20 @@ app.MapControllers();
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.UseWebSockets(new WebSocketOptions
+app.UseWebSockets();
+
+app.Use((ctx, next) =>
 {
+	if (ctx.Request.Method == HttpMethods.Head && ctx.Request.Path == "/ping")
+	{
+		ctx.Response.StatusCode = StatusCodes.Status200OK;
+		return Task.CompletedTask;
+	}
+
+	return next();
 });
+
+app.MapGet("/ping", () => new { message = "pong" });
 
 using (var scope = app.Services.CreateScope())
 {

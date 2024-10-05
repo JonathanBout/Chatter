@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chatter.Core", "Chatter.Cor
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{DA9E3451-DBA4-4978-8BFA-E0A426E94F0C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chatter.WebClient", "Chatter.WebClient\Chatter.WebClient.csproj", "{FE73D111-0931-4D9C-B846-4FD6B5DE8991}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{DA9E3451-DBA4-4978-8BFA-E0A426E94F0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA9E3451-DBA4-4978-8BFA-E0A426E94F0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA9E3451-DBA4-4978-8BFA-E0A426E94F0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE73D111-0931-4D9C-B846-4FD6B5DE8991}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE73D111-0931-4D9C-B846-4FD6B5DE8991}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE73D111-0931-4D9C-B846-4FD6B5DE8991}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE73D111-0931-4D9C-B846-4FD6B5DE8991}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
